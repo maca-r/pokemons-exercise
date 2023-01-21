@@ -55,10 +55,11 @@ async function getPokemonData(name) {
   const parsedData = {
     stats: json.stats
       .map((stat) => ({
-        name: statsNames[stat.stat.name],
-        amount: stat["base_stat"],
+        name: statsNames[stat.stat.name], //hp, atakk, defense, speed
+        amount: stat["base_stat"], //valor habilidad
       }))
       .filter((stat) => stat.name),
+      
     imagen: json.sprites["front_default"],
   };
 
